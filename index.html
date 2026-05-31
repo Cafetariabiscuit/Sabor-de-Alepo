@@ -1,170 +1,85 @@
-:root{
-  --bg:#f7f7f6;
-  --card:#ffffff;
-  --accent:#c76b2b;
-  --accent-2:#f2a65a;
-  --muted:#6b7280;
-  --text:#0b1220;
-  --radius:12px;
-  --max-width:1100px;
-  --gap:18px;
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --shadow: 0 6px 18px rgba(11,18,32,0.06);
-}
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sabores de Alepo</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">SA</div>
+        <div>
+          <div class="site-title">Sabores de Alepo</div>
+          <div class="site-subtitle">Cozinha, história e receitas</div>
+        </div>
+      </div>
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:var(--font-sans);
-  background:linear-gradient(180deg,#fbfcfb 0%, #f3f4f6 100%);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
-  padding:24px;
-}
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="Sobre Alepo.html">Sobre Alepo</a>
+        <a href="História de Alepo em comida.html">História</a>
+        <a href="Ingredientes e os componentes.html">Ingredientes</a>
+        <a href="pequeno almoço.html">Pequeno Almoço</a>
+        <a href="pratos principais.html">Pratos Principais</a>
+        <a href="Doces e sobremesas.html">Doces</a>
+        <a href="Encomendar.html">Encomendar</a>
+      </nav>
+    </header>
 
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:24px;
-}
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="card">
+          <h1 id="hero-title">Bem-vindo aos Sabores de Alepo</h1>
+          <p class="muted">Explore receitas tradicionais, ingredientes autênticos e a história por trás dos pratos.</p>
+          <p class="lead">Adicione imagens e vídeos nas páginas específicas para enriquecer o conteúdo.</p>
+        </div>
 
-.header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:var(--gap);
-  margin-bottom:20px;
-}
-.brand{
-  display:flex;
-  gap:12px;
-  align-items:center;
-}
-.logo{
-  width:56px;
-  height:56px;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
-  color:#fff;
-  font-size:20px;
-  box-shadow:var(--shadow);
-}
-.site-title{font-size:20px;font-weight:700}
-.site-subtitle{font-size:13px;color:var(--muted)}
+        <aside class="card aside-media" aria-label="Destaque">
+          <div class="media">Espaço para vídeo ou imagem principal</div>
+          <div class="muted small">Destaques: pratos sazonais, encomendas e eventos.</div>
+        </aside>
+      </section>
 
-.nav{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.nav a{
-  color:var(--text);
-  text-decoration:none;
-  padding:8px 12px;
-  border-radius:8px;
-  transition:all .18s ease;
-  font-size:14px;
-  background:transparent;
-}
-.nav a:hover{
-  background:rgba(199,107,43,0.08);
-  color:var(--accent);
-}
+      <section class="grid" aria-label="Destaques">
+        <article class="card">
+          <h3>Pratos Principais</h3>
+          <p>Receitas tradicionais e variações modernas.</p>
+        </article>
 
-.hero{
-  display:grid;
-  grid-template-columns:1fr 360px;
-  gap:24px;
-  align-items:start;
-  margin-bottom:28px;
-}
-.card{
-  background:var(--card);
-  padding:18px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-.hero .card h1{margin:0 0 8px 0}
-.muted{color:var(--muted)}
-.lead{margin-top:12px;color:var(--text)}
+        <article class="card">
+          <h3>Doces e Sobremesas</h3>
+          <p>Baklava, knafeh e outras delícias.</p>
+        </article>
 
-.media{
-  width:100%;
-  height:220px;
-  background:linear-gradient(180deg,#fff 0%, #f6f7f8 100%);
-  border-radius:8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--muted);
-  font-size:14px;
-  border:1px solid rgba(11,18,32,0.04);
-}
+        <article class="card">
+          <h3>Ingredientes</h3>
+          <p>Especiarias, nozes, azeites e técnicas.</p>
+        </article>
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:18px;
-  margin-bottom:28px;
-}
-.card h3{margin:0 0 8px 0}
-.card p{margin:0;color:var(--muted);font-size:14px}
+        <article class="card">
+          <h3>Encomendar</h3>
+          <p>Faça encomendas para eventos e entregas.</p>
+        </article>
+      </section>
+    </main>
 
-.article{
-  background:transparent;
-  padding:20px;
-  border-radius:12px;
-}
-.article img{max-width:100%;border-radius:8px;display:block;margin:12px 0}
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner">
+        <div>© <span id="ano"></span> Sabores de Alepo — Todos os direitos reservados</div>
+        <div class="contacts">
+          <div>Email: <a href="mailto:saboresdealepo@gmail.com">saboresdealepo@gmail.com</a></div>
+          <div>Telefone: <a href="tel:+351930668018">930 668 018</a></div>
+          <div><strong>Morada:</strong> Rua da Cavada, 45, 4510-526 Gondomar, Portugal</div>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-.form-row{display:flex;gap:12px;flex-wrap:wrap}
-.input, textarea, select{
-  width:100%;
-  padding:10px 12px;
-  border-radius:8px;
-  border:1px solid rgba(11,18,32,0.08);
-  background:#fff;
-  color:var(--text);
-}
-.button{
-  background:var(--accent);
-  color:#fff;
-  padding:10px 14px;
-  border-radius:8px;
-  border:none;
-  cursor:pointer;
-  font-weight:600;
-}
-
-.footer{
-  margin-top:28px;
-  color:var(--muted);
-  font-size:13px;
-  text-align:left;
-  padding:16px;
-  border-radius:8px;
-}
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  align-items:flex-start;
-  flex-wrap:wrap;
-}
-.contacts a{color:var(--accent);text-decoration:none}
-
-.small{font-size:13px}
-.aside-media{display:flex;flex-direction:column;gap:12px}
-
-@media (max-width:880px){
-  .hero{grid-template-columns:1fr}
-  .brand .logo{width:48px;height:48px}
-  .footer-inner{flex-direction:column;align-items:flex-start}
-}
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
