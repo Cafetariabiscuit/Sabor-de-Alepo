@@ -8,14 +8,15 @@
 </head>
 <body>
   <div class="container">
-    <header class="header">
+    <header class="header" role="banner">
       <div class="brand">
-        <div class="logo">SA</div>
+        <div class="logo" aria-hidden="true">SA</div>
         <div>
           <div class="site-title">Sabores de Alepo</div>
-          <div style="font-size:13px;color:var(--muted)">Cozinha, história e receitas</div>
+          <div class="site-subtitle">Cozinha, história e receitas</div>
         </div>
       </div>
+
       <nav class="nav" aria-label="Navegação principal">
         <a href="index.html">Início</a>
         <a href="Sobre Alepo.html">Sobre Alepo</a>
@@ -29,15 +30,16 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="card">
-          <h1>Bem-vindo aos Sabores de Alepo</h1>
+          <h1 id="hero-title">Bem-vindo aos Sabores de Alepo</h1>
           <p class="muted">Explore receitas tradicionais, ingredientes autênticos e a história por trás dos pratos.</p>
-          <p style="margin-top:12px">Adicione imagens e vídeos nas páginas específicas para enriquecer o conteúdo.</p>
+          <p class="lead">Adicione imagens e vídeos nas páginas específicas para enriquecer o conteúdo.</p>
         </div>
-        <aside class="card">
+
+        <aside class="card aside-media" aria-label="Destaque">
           <div class="media">Espaço para vídeo ou imagem principal</div>
-          <div style="margin-top:12px;font-size:14px;color:var(--muted)">Destaques: pratos sazonais, encomendas e eventos.</div>
+          <div class="muted small">Destaques: pratos sazonais, encomendas e eventos.</div>
         </aside>
       </section>
 
@@ -46,14 +48,17 @@
           <h3>Pratos Principais</h3>
           <p>Receitas tradicionais e variações modernas.</p>
         </article>
+
         <article class="card">
           <h3>Doces e Sobremesas</h3>
           <p>Baklava, knafeh e outras delícias.</p>
         </article>
+
         <article class="card">
           <h3>Ingredientes</h3>
           <p>Especiarias, nozes, azeites e técnicas.</p>
         </article>
+
         <article class="card">
           <h3>Encomendar</h3>
           <p>Faça encomendas para eventos e entregas.</p>
@@ -61,21 +66,16 @@
       </section>
     </main>
 
-    <footer class="footer">
-      © <span id="ano"></span> Sabores de Alepo — Todos os direitos reservados
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner">
+        <div>© <span id="ano"></span> Sabores de Alepo — Todos os direitos reservados</div>
+        <div class="contacts">
+          <div>Email: <a href="mailto:saboresdealepo@gmail.com">saboresdealepo@gmail.com</a></div>
+          <div>Telefone: <a href="tel:+351930668018">930 668 018</a></div>
+          <div><strong>Morada:</strong> Rua da Cavada, 45, 4510-526 Gondomar, Portugal</div>
+        </div>
+      </div>
     </footer>
-      <p>Email: <a href="mailto:saboresdealepo@gmail.com" style="color: #ffd699;">saboresdealepo@gmail.com</a></p>
-      <p>Telefone: 930668018 (custo de chamada nacional)</p>
-      <p><strong>Morada:</strong><br>
-      Rua da Cavada,45<br>
-      , 4510-526<br>
-      Gondomar, Portugal</p>
-
-
-        <footer class="footer">
-      © <span id="ano"></span> Sabores de Alepo — Todos os direitos reservados
-    </footer>
-    
   </div>
 
   <script>
