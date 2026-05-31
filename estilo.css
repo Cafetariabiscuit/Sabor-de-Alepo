@@ -1,71 +1,157 @@
-body {
-  font-family: Arial, sans-serif;
-  color: white;
-  margin: 0;
-  background-image: url('https://raw.github.com/AbdallahJaajoul/Sabor-de-Alepo/main/2298795994_0cd9da31ec_b.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  min-height: 100vh;
+/* estilo.css - design global para Sabores de Alepo */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#c76b2b;
+  --muted:#9aa6b2;
+  --text:#e6eef6;
+  --radius:10px;
+  --max-width:1100px;
+  --gap:18px;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: -1;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  background:linear-gradient(180deg,#071021 0%, #0b1220 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding:24px;
 }
 
-aside {
-  background: #8b5e3c;
-  padding: 20px;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
+/* Layout */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:24px;
 }
 
-aside .castle {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
+/* Header / Nav */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--gap);
+  margin-bottom:20px;
+}
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.brand .logo{
+  width:56px;
+  height:56px;
+  background:linear-gradient(135deg,var(--accent),#f2a65a);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:#fff;
+  font-size:20px;
+}
+.site-title{font-size:20px;font-weight:700}
+.nav{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  transition:all .18s ease;
+  font-size:14px;
+}
+.nav a:hover{background:rgba(255,255,255,0.03); color:var(--text)}
+
+/* Hero */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:24px;
+  align-items:start;
+  margin-bottom:28px;
+}
+.hero .card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(2,6,23,0.6);
+}
+.hero .media{
+  width:100%;
+  height:220px;
+  background:#071226;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-size:14px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  margin: 0;
-  padding: 0;
+/* Grid for content cards */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin-bottom:28px;
+}
+.card{
+  background:var(--card);
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(2,6,23,0.5);
+}
+.card h3{margin:0 0 8px 0}
+.card p{margin:0;color:var(--muted);font-size:14px}
+
+/* Article / content */
+.article{
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  padding:20px;
+  border-radius:12px;
+}
+.article img{max-width:100%;border-radius:8px;display:block;margin:12px 0}
+
+/* Form */
+.form-row{display:flex;gap:12px;flex-wrap:wrap}
+.input, textarea, select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:transparent;
+  color:var(--text);
+}
+.button{
+  background:var(--accent);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
 }
 
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
+/* Footer */
+.footer{
+  margin-top:28px;
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
 }
 
-main {
-  margin-left: 260px;
-  padding: 20px;
-}
-
-@media (max-width: 768px) {
-  aside {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  main {
-    margin-left: 0;
-  }
+/* Responsive */
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr}
+  .brand .logo{width:48px;height:48px}
 }
